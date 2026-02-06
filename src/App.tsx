@@ -12,15 +12,15 @@ export default function App() {
   const [bgIndex, setBgIndex] = useState(0)
   const [bgImage, setBgImage] = useState(bk1) // imagen inicial
   
-  const noBtnRef = useRef(null)
-  const movableAreaRef = useRef(null)
+  const noBtnRef = useRef<HTMLButtonElement>(null)
+  const movableAreaRef = useRef<HTMLDivElement>(null)
   const [showNo, setShowNo] = useState(true)
 
   const bgCycle = [bk2, bk3,bk4] // tus 3 imágenes
   const bgYes = bk5 // imagen cuando el mouse está en "Sí"
 
   // Detectar movimiento del mouse
-const handleMouseMove = (e) => {
+const handleMouseMove = (e: MouseEvent) => {
   const btn = noBtnRef.current
   if (!btn) return
 
